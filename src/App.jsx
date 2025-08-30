@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import './App.css';
 import Container from './components/Container';
 import Navbar from './components/Navbar';
-
+import Loading from './components/Loading';
+import Error from './components/Error';
 import { getNews } from './services/getNews';
 
 function App() {
-  const [articles, setArticles] = useState();
+  const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -23,6 +24,8 @@ function App() {
 
         return
       }
+      setLoading(false);
+      setArticles(res.articles);
     }
 
     fetchTechNews()
@@ -32,6 +35,11 @@ function App() {
     <>
     <Container>
       <Navbar />
+      {loading && <Loading/>}
+      {error && <Error/>}
+      {(!loading && articles.length > 0) && (
+        <h1>Technology </h1>
+      )}
     </Container>
     </>
   )
