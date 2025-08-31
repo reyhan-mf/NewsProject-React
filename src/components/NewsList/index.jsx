@@ -5,7 +5,7 @@ import styles from "./NewsList.module.css";
 
 function NewsList({articles}) {
   return (
-    <div className={styles.NewsList}>
+    <div className={styles.newsList}>
         {
             articles.map((article, index, arr) => {
                 return (

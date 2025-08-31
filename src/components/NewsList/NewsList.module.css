@@ -1,0 +1,13 @@
+.newsList{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .newsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+}
