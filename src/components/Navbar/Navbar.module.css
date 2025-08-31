@@ -35,14 +35,11 @@
 
 .categories {
   display: flex;
-
-  width: 100%;
+  flex-wrap: wrap; /* Tambahkan ini agar konten bisa turun ke bawah */
+    
+  justify-content: center;
   padding: 16px 0 0 0;
-
-  overflow-x: scroll;
-  overflow-y: hidden;
-
-  /* Hide scrollbar for IE, Edge and Firefox */
+  overflow-y: visible; /* Atur agar tidak hidden */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
@@ -53,7 +50,7 @@
 }
 
 .categories > a {
-  margin: 0 4px;
+  margin: 2px;
 }
 
 .category {

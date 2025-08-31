@@ -32,7 +32,7 @@ const NewsCard = ({
 
           <p className={styles.newsCardDate}>{(publishedAt)}</p>
           <p className={styles.newsCardAuthor}>
-            {`${author} | ${sourceName}`}
+            {!author ? `${sourceName}` : `${author} | ${sourceName}`}
           </p>
 
           <p className={styles.newsCardDesc}>{description}</p>
