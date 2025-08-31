@@ -5,6 +5,8 @@ import Container from './components/Container';
 import Navbar from './components/Navbar';
 import Loading from './components/Loading';
 import Error from './components/Error';
+import NewsList from './components/NewsList';
+
 import { getNews } from './services/getNews';
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
         return
       }
       setLoading(false);
+      console.log(res.articles[0].title);
       setArticles(res.articles);
     }
 
@@ -38,7 +41,7 @@ function App() {
       {loading && <Loading/>}
       {error && <Error/>}
       {(!loading && articles.length > 0) && (
-        <h1>Technology </h1>
+        <NewsList articles={articles} />
       )}
     </Container>
     </>
